@@ -8,6 +8,7 @@ body {
     background-color: #333;
     color: #fff;
     padding: 20px;
+    text-align: center;
   }
   
   header h1 {
@@ -39,5 +40,20 @@ body {
   
   .hidden {
     display: none;
+  }
+  
+  .recipe-item {
+    background-color: #f4f4f4;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+  }
+  
+  .recipe-item h3 {
+    color: #333;
+  }
+  
+  .recipe-item p {
+    color: #666;
   }
   

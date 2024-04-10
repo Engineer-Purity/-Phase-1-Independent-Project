@@ -1,0 +1,17 @@
+# Node.js files
+/node_modules
+
+# Environment variables
+.env
+
+# IDE or editor files
+.vscode
+.idea
+*.sublime-project
+*.sublime-workspace
+
+# Log files
+*.log
+
+# Mac OS files
+.DS_Store

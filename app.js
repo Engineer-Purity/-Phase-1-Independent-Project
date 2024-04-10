@@ -20,23 +20,8 @@ document.addEventListener('DOMContentLoaded', function() {
       event.preventDefault();
       const username = document.getElementById('login-username').value;
       const password = document.getElementById('login-password').value;
-      // Perform login request using fetch
-      fetch('http://localhost:3000/login', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ username, password })
-      })
-      .then(response => {
-        if (response.ok) {
-          alert('Login successful!');
-          // Redirect or display personalized content
-        } else {
-          alert('Invalid username or password');
-        }
-      })
-      .catch(error => console.error('Error:', error));
+      // Simulate login request (replace with actual API call)
+      alert(`Logged in as ${username}!`);
     });
   
     // Handle signup form submission
@@ -44,37 +29,30 @@ document.addEventListener('DOMContentLoaded', function() {
       event.preventDefault();
       const username = document.getElementById('signup-username').value;
       const password = document.getElementById('signup-password').value;
-      // Perform signup request using fetch
-      fetch('http://localhost:3000/signup', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ username, password })
-      })
-      .then(response => {
-        if (response.ok) {
-          alert('Account created successfully! Please log in.');
-          showLoginForm();
-        } else {
-          alert('Error creating account. Please try again.');
-        }
-      })
-      .catch(error => console.error('Error:', error));
+      // Simulate signup request (replace with actual API call)
+      alert(`Account created for ${username}! Please log in.`);
+      showLoginForm();
     });
   
-    // Fetch and display recipes
-    fetch('http://localhost:3000/api/recipes')
-      .then(response => response.json())
-      .then(recipes => {
-        recipeList.innerHTML = '';
-        recipes.forEach(recipe => {
-          const recipeItem = document.createElement('div');
-          recipeItem.classList.add('recipe-item');
-          recipeItem.innerHTML = `<h3>${recipe.title}</h3><p>Cuisine: ${recipe.cuisine}</p>`;
-          recipeList.appendChild(recipeItem);
-        });
-      })
-      .catch(error => console.error('Error:', error));
+    // Simulated recipe data
+    const recipes = [
+      { title: 'Spaghetti Carbonara', cuisine: 'Italian' },
+      { title: 'Chicken Curry', cuisine: 'Indian' },
+      { title: 'Tacos', cuisine: 'Mexican' }
+    ];
+  
+    // Display recipes
+    function displayRecipes() {
+      recipeList.innerHTML = '';
+      recipes.forEach(recipe => {
+        const recipeItem = document.createElement('div');
+        recipeItem.classList.add('recipe-item');
+        recipeItem.innerHTML = `<h3>${recipe.title}</h3><p>Cuisine: ${recipe.cuisine}</p>`;
+        recipeList.appendChild(recipeItem);
+      });
+    }
+  
+    // Initially display recipes
+    displayRecipes();
   });
   
